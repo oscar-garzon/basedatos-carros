@@ -173,11 +173,13 @@ public class Carro implements Registro {
      * @return una representación en cadena del estudiante.
      */
     @Override public String toString() {
-      return   String.format("Nombre   : %s\n" +
-                             "Cuenta   : %d\n" +
-                             "Promedio : %2.2f\n" +
-                             "Edad     : %d",
-                             nombre, cuenta, promedio, edad);
+      return   String.format("Color : %s\n" +
+                             "Marca : %s\n" +
+                             "Año : %d\n" +
+                             "Cilindraje : %2.2f\n" +
+                             "Caballos de fuerza: %d\n" +
+                             "Torque: %d\n",
+                             color, marca, año, cilindraje, caballosDeFuerza, torque);
     }
 
     /**
