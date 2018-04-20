@@ -169,8 +169,8 @@ public class Carro implements Registro {
     }
 
     /**
-     * Regresa una representación en cadena del estudiante.
-     * @return una representación en cadena del estudiante.
+     * Regresa una representación en cadena del carro.
+     * @return una representación en cadena del carro.
      */
     @Override public String toString() {
       return   String.format("Color : %s\n" +
@@ -183,19 +183,19 @@ public class Carro implements Registro {
     }
 
     /**
-     * Guarda al estudiante en la salida recibida.
-     * @param out la salida dónde hay que guardar al estudiante.
+     * Guarda el carro en la salida recibida.
+     * @param out la salida dónde hay que guardar al carro.
      * @throws IOException si un error de entrada/salida ocurre.
      */
     @Override public void guarda(BufferedWriter out) throws IOException {
-        out.write(String.format("%s\t%d\t%2.2f\t%d\n",
-                                nombre, cuenta, promedio, edad));
+        out.write(String.format("%s\t%s\t%d\t%2.2f\t%d\td\n",
+                             color, marca, año, cilindraje, caballosDeFuerza, torque));
     }
 
     /**
-     * Carga al estudiante de la entrada recibida.
-     * @param in la entrada de dónde hay que cargar al estudiante.
-     * @return <tt>true</tt> si el método carga un estudiante válido,
+     * Carga el carro de la entrada recibida.
+     * @param in la entrada de dónde hay que cargar el carro.
+     * @return <tt>true</tt> si el método carga un carro válido,
      *         <tt>false</tt> en otro caso.
      * @throws IOException si un error de entrada/salida ocurre, o si la entrada
      *         recibida no contiene a un estudiante.
@@ -207,14 +207,16 @@ public class Carro implements Registro {
         linea.trim();
         if (linea.equals(""))
             return false;
-        String camposEstudiante[] = linea.split("\t");
-        if (camposEstudiante.length != 4)
+        String camposCarro[] = linea.split("\t");
+        if (camposCarro.length != 6)
             throw new IOException("El archivo es inválido");
-        this.nombre = camposEstudiante[0];
+        this.color = camposCarro[0];
+        this.marca = camposCarro[1];
         try {
-          this.cuenta = Integer.parseInt(camposEstudiante[1]);
-          this.promedio = Double.parseDouble(camposEstudiante[2]);
-          this.edad = Integer.parseInt(camposEstudiante[3]);
+          this.año = Integer.parseInt(camposEstudiante[2]);
+          this.cilindraje = Double.parseDouble(camposEstudiante[3]);
+          this.caballosDeFuerza = Integer.parseInt(camposEstudiante[4]);
+          this.torque = Integer.parseInt(camposEstudiante[5]);
         }catch (NumberFormatException nfe) {
             throw new IOException("Registro inválido");
         }
