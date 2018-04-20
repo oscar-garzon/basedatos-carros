@@ -35,7 +35,7 @@ public class Carro implements Registro {
      * @param caballosDeFuerza los caballos de fuerza del carro.
      * @param torque el torque del carro.
      */
-    public Estudiante(String color,
+    public Carro(String color,
                       String marca,
                       int    año,
                       double cilindraje,
