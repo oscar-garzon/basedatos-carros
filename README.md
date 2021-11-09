@@ -5,7 +5,7 @@ La aplicación es una base de datos para carros. Se pueden cargar o guardar
 coches con los siguientes campos: color, marca, año, cilindraje, caballos de fuerza 
 y torque. También se puede buscar automoviles por marca y año. 
 
-Para ejecutar la aplicación posicionate en proyecto1:
+Para ejecutar la aplicación escribe los siguientes comandos:
 ```
 $ ant proyecto1.jar
 $ java -jar
